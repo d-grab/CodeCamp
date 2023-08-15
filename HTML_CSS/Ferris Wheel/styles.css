@@ -1,13 +1,21 @@
 .wheel {
-    border: 2px solid black;
-    border-radius: 50%;
-    margin-left: 50px;
-    position: absolute;
-    height: 55vw;
-    width: 55vw;
-    size: 0ch;
-  }
-  .line {
+  border: 2px solid black;
+  border-radius: 50%;
+  margin-left: 50px;
+  position: absolute;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
+  animation-name: wheel;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  top: 20%;
+  left: 20%;
+}
+
+.line {
   background-color: black;
   width: 50%;
   height: 2px;
@@ -66,4 +74,31 @@
 .cabin:nth-of-type(6) {
   right: 17%;
   top: 7%;
+}
+
+@keyframes wheel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cabins {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: purple;
+  }
+  75% {
+    background-color: yellow;
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
